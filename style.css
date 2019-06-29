@@ -4,9 +4,16 @@
 body {
     font: 20px Helvetica;
     max-width: 10in;
+    padding-left: 10px;
 }
 h1, a {
     color: #00356b;
+}
+#calculator {
+    border-left: solid 3px #00356b;
+    padding: 5px;
+    height: 120px;
+    margin-left: -8px;
 }
 input {
     font: inherit;
