@@ -2,13 +2,17 @@ const number = document.getElementById('number'),
       explanation = document.getElementById('explanation');
 
 const expression = /^([A-Z]+)(\d)(\d+)([A-Z]+)?$/;
-number.onchange = function() {
+number.oninput = function() {
     result = this.value.match(expression);
     if (result) {
-        let _, entryways, floor, suite, room = result;
-        response = 'Your suite can be accessed through entryway' + (entryways.length > 1 ? 's' : '') +
+        let entryways = result[1],
+            floor = result[2],
+            suite = result[3],
+            room = result[4];
+        console.log(entryways);
+        response = ('Your suite can be accessed through entryway' + (entryways.length > 1 ? 's' : '') +
                 ' ' + verbalize_list(entryways) + ', '
-                'is on floor ' + floor + ', and is suite #' + suite + ' on that floor.';
+                'is on floor ' + floor + ', and is suite #' + suite + ' on that floor.');
         if (room) {
             response += ' Your own room is room ' + room + ' within your suite.';
         }
@@ -17,10 +21,10 @@ number.onchange = function() {
 }
 
 function verbalize_list(items) {
-    items = items.split()
+    items = items.split();
     if (items.length > 1) {
         last = items.pop();
         items[items.length - 1] += ' and ' + last;
     }
-    return ', '.join(items);
+    return items.join(', ');
 }
