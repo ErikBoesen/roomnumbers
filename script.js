@@ -1,17 +1,20 @@
 const number = document.getElementById('number'),
       explanation = document.getElementById('explanation');
 
+function instruct() {
+    explanation.textContent = '[Type a suite/room number to see an explanation.]';
+}
+instruct();
 number.focus();
 
 const expression = /^([A-Z]+)(\d)(\d+)([A-Z]+)?$/;
 number.oninput = function() {
-    result = this.value.match(expression);
+    result = this.value.toUpperCase().match(expression);
     if (result) {
         let entryways = result[1],
             floor = result[2],
             suite = result[3],
             room = result[4];
-        console.log(entryways);
         response = ('Your suite can be accessed through entryway' + (entryways.length > 1 ? 's' : '')
                     + ' ' + verbalize_list(entryways) + ', '
                     + 'is on floor ' + floor + ', and is suite #' + suite + ' on that floor.');
@@ -20,14 +23,17 @@ number.oninput = function() {
         }
         explanation.textContent = response;
     } else {
-        explanation.textCcontent = '';
+        instruct();
     }
 }
 
 function verbalize_list(items) {
-    items = items.split();
+    items = items.split('');
     if (items.length > 1) {
         last = items.pop();
+        if (items.length > 1) {
+            items[items.length - 1] += ',';
+        }
         items[items.length - 1] += ' and ' + last;
     }
     return items.join(', ');

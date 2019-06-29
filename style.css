@@ -1,10 +1,14 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 body {
-    font: Helvetica 20px;
+    font: 20px Helvetica;
+}
+h1 {
+    color: #00356b;
+}
+input {
+    font: inherit;
 }
 #disclaimer {
     color: grey;
