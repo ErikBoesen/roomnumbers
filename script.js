@@ -2,7 +2,7 @@ const number = document.getElementById('number'),
       explanation = document.getElementById('explanation');
 
 function instruct() {
-    explanation.textContent = '[Type a suite/room number to see an explanation.]';
+    explanation.textContent = '[Type a valid suite/room number to see an explanation.]';
 }
 instruct();
 number.focus();
