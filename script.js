@@ -1,6 +1,8 @@
 const number = document.getElementById('number'),
       explanation = document.getElementById('explanation');
 
+number.focus();
+
 const expression = /^([A-Z]+)(\d)(\d+)([A-Z]+)?$/;
 number.oninput = function() {
     result = this.value.match(expression);
@@ -17,6 +19,8 @@ number.oninput = function() {
             response += ' Your own room is room ' + room + ' within your suite.';
         }
         explanation.textContent = response;
+    } else {
+        explanation.textCcontent = '';
     }
 }
 
