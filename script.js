@@ -7,7 +7,8 @@ function instruct() {
 instruct();
 number.focus();
 
-const expression = /^([A-Z]+)(\d)(\d+)([A-Z]+)?$/;
+
+const expression = /^([A-Z]+)(\d+)(\d)([A-Z]+)?$/;
 number.oninput = function() {
     result = this.value.toUpperCase().match(expression);
     if (result) {
