@@ -49,7 +49,7 @@ number.oninput = function() {
             // Remove trailing hyphen
             // TODO: figure out a way to do this with regex
             building_code = building_code.substring(0, building_code.length - 1);
-            building = BUILDINGS[building_code];
+            building = BUILDINGS[building_code] || 'an unknown building';
             response += 'You live in ' + building + ' (' + building_code + '). ';
         }
         response += ('Your suite can be accessed through entryway' + (entryways.length > 1 ? 's' : '')
