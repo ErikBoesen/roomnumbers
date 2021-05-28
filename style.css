@@ -7,14 +7,16 @@ body {
     padding-left: 10px;
     line-height: 1.25;
 }
+h1 {
+    margin-bottom: 10px;
+}
 h1, a {
     color: #00356b;
 }
 #calculator {
-    border-left: solid 3px #00356b;
-    padding: 5px;
+    padding: 5px 10px;
     min-height: 100px;
-    margin-left: -8px;
+    border-left: solid 4px #00356b;
 }
 input {
     font: inherit;
